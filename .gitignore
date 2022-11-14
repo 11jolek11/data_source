@@ -196,6 +196,6 @@ pip-selfcheck.json
 
 # End of https://www.toptal.com/developers/gitignore/api/python,virtualenv,visualstudiocode
 
-
+**.csv
 __test_coin.py
 __test_meteo.py
