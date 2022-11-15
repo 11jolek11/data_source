@@ -6,6 +6,7 @@ import requests
 import paho.mqtt.client as mqtt
 from itertools import count
 import argparse
+import json
 
 avaible_datasets = {
     1: "./config/biomechanical.ini",
@@ -88,7 +89,7 @@ class Manager:
         client.on_connect=on_connect
         client.connect(self._mqtt_config['broker'], int(self._mqtt_config['port']))
         for _ in range(4000):
-            client.publish(self._mqtt_config['topic'], next(self.temp))
+            client.publish(self._mqtt_config['topic'], json.dumps({'data': next(self.temp)}))
             time.sleep(self.frequency)
         client.disconnect()
 
