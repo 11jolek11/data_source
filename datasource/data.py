@@ -5,6 +5,7 @@ from abc import ABC, abstractmethod
 
 class Data():
     def __init__(self, path) -> None:
+        print(path)
         if os.path.exists(path):
             self.s_content = None
             self._path = path
@@ -75,13 +76,22 @@ class DataCSV(Data):
 
     def expose(self):
         return list(self.s_content.to_dict().keys()), self.s_content.to_dict()
+        # return self.s_content.to_dict()
+
+
+
         # return self.s_content.items()
         # print(next(self.s_content.iterrows())[1]['GMSL'])
 
 
 if __name__ == "__main__":
-    data = DataCSV('./datasets/sea_level.csv')
+    pass
+    # data = DataCSV('./datasets/sea_level.csv')
     # data.sample()
     # print()
-    print(data.expose())
+    # labels, holder = data.expose()
+
+    # print(max(list(holder[labels[0]].keys())))
+
+    # print(str([1]["Time"][265]) + " " + str(data.expose()[1]["GMSL"][265]))
     

@@ -36,8 +36,8 @@ class Manager:
         self.config.read(path_to_config)
         self._data_config = self.config['Data']
         
-        
-        self.frequency = 1/int(self._data_config['frequency'])
+        # TODO: change to float
+        self.frequency = 1/float(self._data_config['frequency'])
 
         
 

@@ -37,7 +37,7 @@ class Manager:
         self._data_config = self.config['Data']
         
         
-        self.frequency = 1/int(self._data_config['frequency'])
+        self.frequency = 1/float(self._data_config['frequency'])
 
         
 
@@ -112,6 +112,6 @@ class Manager:
 
 if __name__ == "__main__":
     pass
-    p = Manager("./config/biomechanical.ini")
+    p = Manager("./config/Book_Dataset_1.ini")
 #     # parser = argparse.ArgumentParser()
 
